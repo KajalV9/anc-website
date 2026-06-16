@@ -781,3 +781,164 @@ body{
     padding:12px;
     display:block;
   }
+
+  /* ── PRODUCT SLIDER ── */
+.p-slider{
+  position:relative;
+  width:100%;
+  height:220px;
+  background:#ffffff;
+  border-radius:var(--r);
+  margin-bottom:20px;
+  overflow:hidden;
+}
+
+.p-slides{
+  display:flex;
+  height:100%;
+  transition:transform 0.35s ease;
+  will-change:transform;
+}
+
+.p-slide{
+  min-width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+}
+
+.p-slide .p-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:12px;
+  display:block;
+}
+
+/* Arrows */
+.p-prev,.p-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.45);
+  color:#fff;
+  border:none;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  font-size:13px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+  transition:background 0.2s;
+  line-height:1;
+}
+.p-prev{left:8px}
+.p-next{right:8px}
+.p-prev:hover,.p-next:hover{background:var(--red)}
+
+/* Dots */
+.p-dots{
+  position:absolute;
+  bottom:8px;
+  left:0;right:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+.p-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.25);
+  cursor:pointer;
+  transition:background 0.2s,transform 0.2s;
+}
+.p-dot.active{
+  background:var(--red);
+  transform:scale(1.3);
+}
+
+/* ── SLIDER — remove border ── */
+.p-slider{
+  border:none;
+  background:transparent;
+}
+.p-slide{
+  background:transparent;
+}
+.p-slide .p-img{
+  background:transparent;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  cursor:zoom-out;
+}
+.lightbox-overlay.open{
+  display:flex;
+}
+.lightbox-overlay img{
+  max-width:90vw;
+  max-height:88vh;
+  object-fit:contain;
+  border-radius:8px;
+  box-shadow:0 8px 48px rgba(0,0,0,0.6);
+  cursor:default;
+  background:#ffffff;
+  padding:24px;
+}
+.lightbox-close{
+  position:fixed;
+  top:20px;right:24px;
+  color:#fff;
+  font-size:32px;
+  font-weight:300;
+  line-height:1;
+  cursor:pointer;
+  background:none;
+  border:none;
+  z-index:10000;
+  opacity:0.8;
+  transition:opacity 0.2s;
+}
+.lightbox-close:hover{opacity:1}
+.p-slide .p-img{
+  cursor:zoom-in;
+}
+/* ── HIDE SLIDER ARROWS ── */
+.p-prev,
+.p-next{
+  display:none;
+}
+/* ── SLIDER — force white background ── */
+.p-slider,
+.p-slides,
+.p-slide{
+  background:#ffffff;
+}
+/* ── PRODUCT IMAGE — remove white background ── */
+.p-slide .p-img{
+  mix-blend-mode: multiply;
+}
+
+.p-slider,
+.p-slides,
+.p-slide{
+  background:#ffffff;
+}
+
+
+
