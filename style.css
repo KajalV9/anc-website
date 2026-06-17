@@ -941,5 +941,76 @@ body{
   background:#ffffff;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   MOBILE IMPROVEMENTS (max-width: 768px only)
+   Every rule here is wrapped in a media query or targets
+   a class that only exists / shows on mobile.
+   Desktop layout is 100% unchanged.
+   ═══════════════════════════════════════════════════════════ */
 
+/* nav social row: hidden on desktop, shown inside mobile menu */
+.nav-social-row{display:none}
+.nav-social-icons{display:flex;align-items:center;gap:10px;justify-content:center}
 
+/* Keyframe used only inside the mobile media query below */
+@keyframes topstrip-ticker{
+  0%  {transform:translateX(100vw)}
+  100%{transform:translateX(-100%)}
+}
+
+@media(max-width:768px){
+
+  /* ── 1. TOP STRIP: compact single-line animated ticker ──
+     Overrides the desktop flex-wrap layout that stacks into
+     5 rows and consumes most of the first screen on mobile. */
+  .top-strip{
+    padding:0;
+    overflow:hidden;
+  }
+  .ts-inner{
+    max-width:none;
+    width:max-content;
+    flex-wrap:nowrap;
+    margin:0;
+    gap:16px;
+    padding:6px 24px;
+    animation:topstrip-ticker 26s linear infinite;
+  }
+  .ts-inner>span{
+    white-space:nowrap;
+  }
+  /* Social icons removed from top strip on mobile —
+     they appear neatly in the hamburger menu and in the footer */
+  .ts-socials{
+    display:none !important;
+  }
+
+  /* ── 2. NAVBAR: slimmer height, tagline hidden ── */
+  .nav-inner{
+    height:60px;
+  }
+  .logo-img{
+    height:44px;
+  }
+  /* Hide "Precision · Performance · Reliability" tagline on mobile */
+  .logo-tag{
+    display:none;
+  }
+  /* Fix mobile dropdown position to match the reduced navbar height */
+  .nav-links{
+    top:60px;
+  }
+
+  /* ── 3. HERO: tighter padding so heading is visible sooner ── */
+  .hero-inner{
+    padding:28px 20px 32px;
+  }
+
+  /* ── 4. SOCIAL ICONS in hamburger menu ── */
+  .nav-social-row{
+    display:block;
+    border-top:1px solid var(--silver);
+    padding:14px 20px;
+    margin-top:4px;
+  }
+}
