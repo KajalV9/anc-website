@@ -1013,4 +1013,36 @@ body{
     padding:14px 20px;
     margin-top:4px;
   }
+  /* ── MOBILE SOCIAL ICONS FIX — force neat circles like footer ── */
+@media(max-width:768px){
+  .nav-social-row,
+  .nav-social-row .nav-social-icons{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:nowrap;
+  }
+  .nav-social-row a{
+    flex:0 0 auto !important;
+    width:40px !important;
+    height:40px !important;
+    min-width:40px !important;
+    max-width:40px !important;
+    padding:0 !important;
+    margin:0 !important;
+    border-radius:50% !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    color:#fff;
+    text-decoration:none;
+    overflow:hidden;
+  }
+  .nav-social-row a svg{
+    width:18px !important;
+    height:18px !important;
+    display:block;
+  }
+}
 }
