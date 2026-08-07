@@ -24,14 +24,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ancmarkingtechnologies.in">
     <meta property="og:title" content="ANC Marking Technologies | Precision Marking Machine Manufacturer — Pune">
-    <meta property="og:description" content="Manufacturer of Dot Pin, Fiber Laser, UV, CO2, Electro-Chemical Etching & Laser Welding machines. Chakan, Pune since 2009. Pan-India delivery & installation.">
+    <meta property="og:description"
+        content="Manufacturer of Dot Pin, Fiber Laser, UV, CO2, Electro-Chemical Etching & Laser Welding machines. Chakan, Pune since 2009. Pan-India delivery & installation.">
     <meta property="og:image" content="https://ancmarkingtechnologies.in/images/Logo.jpeg">
     <meta property="og:site_name" content="ANC Marking Technologies">
 
     <!-- Twitter Card (NEW — Step 2) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ANC Marking Technologies | Precision Marking Machine Manufacturer — Pune">
-    <meta name="twitter:description" content="Manufacturer of Dot Pin, Fiber Laser, UV, CO2, Electro-Chemical Etching & Laser Welding machines. Chakan, Pune since 2009. Pan-India delivery.">
+    <meta name="twitter:description"
+        content="Manufacturer of Dot Pin, Fiber Laser, UV, CO2, Electro-Chemical Etching & Laser Welding machines. Chakan, Pune since 2009. Pan-India delivery.">
     <meta name="twitter:image" content="https://ancmarkingtechnologies.in/images/Logo.jpeg">
 
     <!-- Stylesheet + Fonts -->
@@ -654,12 +656,12 @@
                     <div class="p-slider" data-slider>
                         <div class="p-slides">
                             <div class="p-slide">
-                                <img src="images/Rotary Fixture - 1.jpg.jpeg"
-                                    alt="DPM Accessories" class="p-img"
+                                <img src="images/Rotary Fixture - 1.jpg.jpeg" alt="DPM Accessories" class="p-img"
                                     onerror="this.closest('.p-slide').style.display='none'">
                             </div>
                             <div class="p-slide">
-                                <img src="images/aluminium-indentor-pin-removebg-preview - Copy.png" alt="DPM Accessories 3" class="p-img"
+                                <img src="images/aluminium-indentor-pin-removebg-preview - Copy.png"
+                                    alt="DPM Accessories 3" class="p-img"
                                     onerror="this.closest('.p-slide').style.display='none'">
                             </div>
                             <div class="p-slide">
@@ -721,7 +723,7 @@
                             <span class="p-dot"></span>
                             <span class="p-dot"></span>
                             <span class="p-dot"></span>
-                    
+
 
                         </div>
                     </div>
@@ -1027,8 +1029,11 @@
                     <div class="ci-btns">
                         <a href="https://wa.me/919850973875?text=Hello, I need information about your marking machines"
                             target="_blank" class="ci-btn-wa">WhatsApp &mdash; Fastest Response</a>
-                        <a href="images/ANC Marking Technologies Brochure.pdf" download
-                            class="ci-btn-br">Download E-Brochure</a>
+                        <!-- <a href="images/ANC Marking Technologies Brochure.pdf" download class="ci-btn-br">Download
+                            E-Brochure</a> -->
+                        <a href="#" onclick="openPopup()" ; return false; class="ci-btn-br">
+                            Download E-Brochure
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1102,8 +1107,11 @@
                             <li><a href="#customers">Our Customers</a></li>
                             <li><a href="#industries">Industries</a></li>
                             <li><a href="#contact">Contact Us</a></li>
-                            <li><a href="images/ANC Marking Technologies Brochure.pdf" download>Download Brochure</a>
-                            </li>
+                            <!-- <li><a href="images/ANC Marking Technologies Brochure.pdf" download>Download Brochure</a>
+                            </li> -->
+                            <!-- <li><a href="#" onclick="openPopup()" ;return false; class="ci-btn-br">
+                                    Download E-Brochure
+                                </a></li> -->
                             <li><a href="https://wa.me/919850973875" target="_blank">WhatsApp</a></li>
                         </ul>
                     </div>
@@ -1140,6 +1148,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- ✅ Brochure Popup START -->
+    <div id="brochurePopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Get Brochure</h2>
+
+            <form id="brochureForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Work Email" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <input type="text" id="company" placeholder="Company Name (Optional)">
+
+                <select id="requirement" required>
+                    <option value="">Select Requirement</option>
+                    <option>Laser Marking</option>
+                    <option>Dot Peen</option>
+                    <option>Inkjet</option>
+                    <option>Not Sure</option>
+                </select>
+
+                <button type="submit" id="downloadBtn"> Get Brochure </button>
+            </form>
+        </div>
+    </div>
+    <!-- ✅ Brochure Popup END -->
 </body>
 
 </html>
